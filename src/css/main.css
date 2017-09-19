@@ -26,16 +26,18 @@ a {
 }
 
 .main-container {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: all 0.6s ease;
+  /*opacity: 0;*/
+  /*visibility: hidden;*/
+  /*pointer-events: none;*/
+  display: none;
 
-  &.visible {
+  /*transition: all 0.6s ease;*/
+
+  /*&.visible {
     opacity: 1;
     visibility: visible;
     pointer-events: all;
-  }
+  }*/
 }
 
 .preloader {

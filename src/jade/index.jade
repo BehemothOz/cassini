@@ -58,14 +58,14 @@ body
 
   script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js")
   script.
-    $(window).on('load', function() {
-      setTimeout(function() { 
-        $('body').addClass('no-active');
-        $('.main-container').addClass('visible');
-        $('.preloader').addClass('hide');
-      }, 3000);
-    })
+      $(window).on('load', function() {
+        setTimeout(function() {
+          $('body').addClass('no-active');
+          $('.main-container').fadeIn(300);
+          $('.preloader').addClass('hide');
+        }, 2000);
 
+      });
   script.
 
     $(window).on("scroll", function() {
