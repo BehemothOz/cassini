@@ -1,0 +1,230 @@
+@import 'var.css';
+@import 'page-blocks/sec_title.css';
+@import 'page-blocks/parallax-space.css';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: $roboto;
+  font-size: 16px;
+  color: $black;
+  background-color: $white;
+  overflow-x: hidden; 
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.main-header {
+  position: relative;
+  padding-top: 60vh;
+  height: 100vh;
+  background: url('../img/bg4.jpg') no-repeat center 50%;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+
+/** Meteors + animation **/
+
+.meteors {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+
+.meteors__item {
+  position: absolute;
+  top: 50px;
+  left: 280px;
+  width: 300px;
+  height: 1px;
+  -webkit-transform: rotate(-45deg);
+  background-image: -webkit-linear-gradient(left, white, rgba(255,255,255,0));
+
+  &:nth-child(1) {
+    top: 100px;
+    left: 480px; 
+    animation: 
+    meteor 10s linear infinite;
+  }
+
+  &:nth-child(2) {
+    top: 200px;
+    left: 280px; 
+    animation: 
+    meteor 10s linear infinite;
+  }
+
+  &:nth-child(3) {
+    top: 250px;
+    left: 790px; 
+    animation: 
+    meteor 9s linear infinite;
+  }
+
+  &:nth-child(4) {
+    top: 300px;
+    left: 950px; 
+    animation: 
+    meteor 11s linear infinite;
+  }
+
+  &:nth-child(5) {
+    top: 100px;
+    left: 800px; 
+    animation: 
+    meteor 8s linear infinite;
+  }
+}
+
+
+/** Sticky header **/
+
+.sticky-header {
+  width: 100%;
+  height: 110px;
+  background-color: rgba(0,0,0,.6);
+  text-align: center;
+  border-top: 1px solid $white;
+  border-bottom: 1px solid $white;
+  transition: all .4s ease;
+
+  &__fix {
+    position: fixed;
+    top: 0;
+    height: 60px;
+    background-color: $black;
+
+    .sticky-header__logo_link {
+      font-size: 35px;
+      letter-spacing: 20px;
+
+      &::before {
+        left: 321px;
+      }
+    }
+  }
+}
+
+
+/*Logo*/
+
+.sticky-header__logo_link {
+  position: relative;
+  font-family: $monster;
+  font-size: 64px;
+  line-height: 1.7;
+  color: $white;
+  letter-spacing: 0;
+  transition: all .4s ease;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -0.326em;
+    bottom: 0;
+    width: 5px;
+    background-color: $white;
+    transition: all .4s linear;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -0.326em;
+    bottom: 0;
+    width: 5px;
+    background-color: $white;
+  }
+}
+
+
+/** Navigation **/
+
+.main-nav {
+  opacity: 0;
+
+  &_open {
+    position: fixed;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 1;
+    transition: opacity 0.4s linear;
+    transition-delay: 0.4s;
+  }
+} 
+
+.main-nav__list-items {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 0; 
+  padding: 0 2em;
+  list-style: none;
+  background-color: $black;
+
+  &::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    left: 0px;
+    bottom: -48px;
+    border: 24px solid transparent;
+    border-top: 24px solid $black;
+    border-right: 24px solid $black;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    right: -47px;
+    border: 24px solid transparent;
+    border-top: 24px solid $black;
+    border-left: 24px solid $black;
+  }
+}
+
+.main-nav__link {
+  display: block;
+  padding: 0.556em 1.4em;
+  font-size: 18px;
+  line-height: 1.6;
+  color: $white;
+  white-space: nowrap;
+}
+
+.main-nav__link:hover {
+  color: $black;
+  background-color: $white;
+
+}
+
+.main {
+  height: 1500px;
+}
+
+
+/** Animation blocks **/
+@keyframes meteor {
+  0% {margin-top: -300px; margin-right: -300px; opacity: 1}
+  8% {opacity: 0}
+  10% {margin-top: 300px; margin-left: -600px; opacity: 0}
+  100% {opacity: 0}
+}

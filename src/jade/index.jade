@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+html(lang="en")
+head
+  meta(charset="UTF-8")
+  title Document
+  meta(name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no")
+  link(rel="stylesheet", href="css/main.css")
+  link(href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto+Slab" rel="stylesheet")
+body
+
+  //- Meteors block
+  div.meteors
+    div.meteors__item
+    div.meteors__item
+    div.meteors__item
+    div.meteors__item
+    div.meteors__item
+
+  //- Main header
+  header.main-header
+    //- Sticky
+    div.sticky-header
+      a.sticky-header__logo_link(href="#~") StyleliFe
+
+    //- Navigation
+    nav.main-nav
+      ul.main-nav__list-items
+        li.main-nav__item: a.main-nav__link(href="#") Home
+        li.main-nav__item: a.main-nav__link(href="#") War
+        li.main-nav__item: a.main-nav__link(href="#") Go To Wall
+        li.main-nav__item: a.main-nav__link(href="#") Parallax
+
+
+  div.container
+    section.section-head
+      h1.section-head__title Home
+      p.section-head__desc Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem dolor voluptatum consectetur quisquam ipsum minima.
+
+
+  section.parallax-space
+    h1 Pixel Space
+    .bg.bg1(data-speed="0.3" data-type="parallax-bg")
+    .bg.bg2(data-speed="0.2" data-type="parallax-bg")
+
+  div.main
+
+
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js")
+  script.
+
+    $(window).on("scroll", function() {
+
+      var stickyPostition = $('.sticky-header').position().top;
+
+      if ($(this).scrollTop() < 394.1875) {
+           $('.sticky-header').removeClass('sticky-header__fix');
+
+           $('.main-nav').removeClass('main-nav_open');
+      } else
+
+      if ($(this).scrollTop() > stickyPostition ) {
+          $('.sticky-header').addClass('sticky-header__fix');
+
+          $('.main-nav').addClass('main-nav_open');
+      
+      }
+    });
+
+
+      //- $(window).on('scroll', function() {
+        
+      //-   // Текущая прокрутка сверху
+      //-   var $topDistance = $(window).scrollTop();
+      //-   // Слои, участвующие в parallax
+      //-   var $bg = $("[data-type='parallax-bg']");
+        
+      //-   $bg.each(function() {
+          
+      //-     $speed = $(this).data('speed');
+
+      //-     if ($topDistance > 550) {
+  
+      //-       var move = (0 - $topDistance * $speed);
+      //-       var translate3d = 'translate3d(0, ' + move + 'px, 0)';
+
+      //-       //- console.log(translate3d);
+
+      //-       $(this).css('transform', translate3d);
+      //-     }
+      //-   })
+      //- })
+
+
+
+
+      //- } else  
+
+      //- if ($(this).scrollTop() < stickyPostition) {
+      //-     $('.sticky-header').css( {
+      //-                                 'position': 'absolute',
+      //-                                 'top': '60vh'})
+      //-   }
+
+      //- });
