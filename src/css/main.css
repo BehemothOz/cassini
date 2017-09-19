@@ -12,15 +12,60 @@ body {
   font-size: 16px;
   color: $black;
   background-color: $white;
-  overflow-x: hidden; 
+  overflow-x: hidden;
+  transition: all 0.6s ease;
+
+  &.no-active {
+    background-color: rgba(0, 0, 0, .8);
+  }
 }
 
 a {
   text-decoration: none;
 }
 
+.main-container {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.6s ease;
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+  }
+}
+
+.preloader {
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  margin-top: -50px;
+  margin-left: -75px;
+  width: 150px;
+  height: 100px;
+  background: url('../img/saturn.png') no-repeat center;
+  background-size: contain;
+  animation: saturn 10s linear infinite;
+  transform-origin: center;
+  transition: all 0.3s ease;
+
+  &.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+/** Animation blocks **/
+@keyframes saturn {
+  0% {transform: rotate(0deg)}
+  50% {transform: rotate(180deg)}
+  100% {transform: rotate(360deg)}
+}
+
 .container {
-  /* width: 960px; */
   max-width: 960px;
   margin: 0 auto;
 }

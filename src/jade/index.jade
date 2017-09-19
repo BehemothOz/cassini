@@ -7,53 +7,65 @@ head
   link(rel="stylesheet", href="css/main.css")
   link(href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto+Slab" rel="stylesheet")
 
-body
+body.no-active
 
-  // Meteors block
-  div.meteors
-    div.meteors__item
-    div.meteors__item
-    div.meteors__item
-    div.meteors__item
-    div.meteors__item
+  div.main-container
 
-  // Main header
-  header.main-header
-    // Sticky
-    div.sticky-header
-      a.sticky-header__logo_link(href="#~") Cassini
+    // Meteors block
+    div.meteors
+      div.meteors__item
+      div.meteors__item
+      div.meteors__item
+      div.meteors__item
+      div.meteors__item
 
-  div.container
-    section.about
-      h1.about__title Cassini
-      p.about__desc End of Mission <b>September 15, 201</b>
+    // Main header
+    header.main-header
+      // Sticky
+      div.sticky-header
+        a.sticky-header__logo_link(href="#~") Cassini
 
-      // Player
-      div.about__player.player
-        audio(controls="controls" id="audio_player")
-          source(src="media/space.mp3" type="audio/mpeg")
-          | Your browser does not support the audio element.
+    div.container
+      section.about
+        h1.about__title Cassini
+        p.about__desc End of Mission <b>September 15, 201</b>
 
-    // Article
-    section.about__text
+        // Player
+        div.about__player.player
+          audio(controls="controls" id="audio_player")
+            source(src="media/space.mp3" type="audio/mpeg")
+            | Your browser does not support the audio element.
 
-      p.text__line Having expended almost every bit of the rocket propellant it carried to Saturn, operators are deliberately plunging Cassini into the planet to ensure Saturn’s moons will remain pristine for future exploration — in particular, the ice-covered, ocean-bearing moon Enceladus, but also Titan, with its intriguing pre-biotic chemistry.
+      // Article
+      section.about__text
 
-      p.text__line Beginning in 2010, Cassini began a seven-year mission extension in which it completed many moon flybys while observing seasonal changes on Saturn and Titan. The plan for this phase of the mission was to expend all of the spacecraft’s propellant while exploring Saturn, ending with a plunge into the planet’s atmosphere.
+        p.text__line Having expended almost every bit of the rocket propellant it carried to Saturn, operators are deliberately plunging Cassini into the planet to ensure Saturn’s moons will remain pristine for future exploration — in particular, the ice-covered, ocean-bearing moon Enceladus, but also Titan, with its intriguing pre-biotic chemistry.
 
-      p.text__line In April 2017, Cassini was placed on an impact course that unfolded over five months of daring dives — a series of 22 orbits that each pass between the planet and its rings. Called the Grand Finale, this final phase of the mission has brought unparalleled observations of the planet and its rings from closer than ever before.
+        p.text__line Beginning in 2010, Cassini began a seven-year mission extension in which it completed many moon flybys while observing seasonal changes on Saturn and Titan. The plan for this phase of the mission was to expend all of the spacecraft’s propellant while exploring Saturn, ending with a plunge into the planet’s atmosphere.
 
-      p.text__line On Sept. 15, 2017, the spacecraft will make its final approach to the giant planet Saturn. But this encounter will be like no other. This time, Cassini will dive into the planet’s atmosphere, sending science data for as long as its small thrusters can keep the spacecraft’s antenna pointed at Earth. Soon after, Cassini will burn up and disintegrate like a meteor.
+        p.text__line In April 2017, Cassini was placed on an impact course that unfolded over five months of daring dives — a series of 22 orbits that each pass between the planet and its rings. Called the Grand Finale, this final phase of the mission has brought unparalleled observations of the planet and its rings from closer than ever before.
 
-      p.text__line To its very end, Cassini is a mission of thrilling exploration. Launched on Oct. 15, 1997, the mission entered orbit around Saturn on June 30, 2004 (PDT), carrying the European Huygens probe. After its four-year prime mission, Cassini’s tour was extended twice. Its key discoveries have included the global ocean with indications of hydrothermal activity within Enceladus, and liquid methane seas on Titan.
+        p.text__line On Sept. 15, 2017, the spacecraft will make its final approach to the giant planet Saturn. But this encounter will be like no other. This time, Cassini will dive into the planet’s atmosphere, sending science data for as long as its small thrusters can keep the spacecraft’s antenna pointed at Earth. Soon after, Cassini will burn up and disintegrate like a meteor.
 
-      p.text__line And although the spacecraft may be gone after the finale, its enormous collection of data about Saturn – the giant planet itself, its magnetosphere, rings and moons — will continue to yield new discoveries for decades.
+        p.text__line To its very end, Cassini is a mission of thrilling exploration. Launched on Oct. 15, 1997, the mission entered orbit around Saturn on June 30, 2004 (PDT), carrying the European Huygens probe. After its four-year prime mission, Cassini’s tour was extended twice. Its key discoveries have included the global ocean with indications of hydrothermal activity within Enceladus, and liquid methane seas on Titan.
+
+        p.text__line And although the spacecraft may be gone after the finale, its enormous collection of data about Saturn – the giant planet itself, its magnetosphere, rings and moons — will continue to yield new discoveries for decades.
 
 
-      a(href="https://saturn.jpl.nasa.gov/mission/about-the-mission/summary/") sources
+        a(href="https://saturn.jpl.nasa.gov/mission/about-the-mission/summary/") sources
 
+  div.preloader
 
   script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js")
+  script.
+    $(window).on('load', function() {
+      setTimeout(function() { 
+        $('body').removeClass('no-active');
+        $('.main-container').addClass('visible');
+        $('.preloader').addClass('hide');
+      }, 3000);
+    })
+
   script.
 
     $(window).on("scroll", function() {
