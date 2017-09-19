@@ -20,33 +20,34 @@ a {
   text-decoration: none;
 }
 
-/*.preloader {
-  position: absolute;
-  top: 50vh;
-  left: 50vw;
-  margin-top: -50px;
-  margin-left: -75px;
-  width: 150px;
-  height: 100px;
-  background: url('../img/saturn.png') no-repeat center;
-  background-size: contain;
-  animation: saturn 10s linear infinite;
-  transform-origin: center;
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
   transition: all 0.3s ease;
+  z-index: 1500;
 
-  &.hide {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
+  .preloader-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 100px;
+    margin-top: -50px;
+    margin-left: -75px;
+    background: url('../img/saturn.png') no-repeat center;
+    background-size: contain;
+    animation: saturn 10s linear infinite;
+    transform-origin: center;
   }
 }
 
-/** Animation blocks **/
-/*@keyframes saturn {
-  0% {transform: rotate(0deg)}
-  50% {transform: rotate(180deg)}
-  100% {transform: rotate(360deg)}
-}*/
+.main-container {
+  /*display: none;*/
+}
 
 .container {
   max-width: 960px;
@@ -71,7 +72,7 @@ a {
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: 9999;
+  z-index: 999;
 }
 
 .meteors__item {
@@ -258,4 +259,10 @@ a {
   8% {opacity: 0}
   10% {margin-top: 300px; margin-left: -600px; opacity: 0}
   100% {opacity: 0}
+}
+
+@keyframes saturn {
+  0% {transform: rotate(0deg)}
+  50% {transform: rotate(180deg)}
+  100% {transform: rotate(360deg)}
 }
