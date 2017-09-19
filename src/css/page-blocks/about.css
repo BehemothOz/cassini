@@ -1,11 +1,10 @@
-.section-head {
-  max-width: 60%;
+.about {
   margin: 0 auto;
   padding: 1.5em 0 3em;
   text-align: center;
 }
 
-.section-head__title {
+.about__title {
   margin: 0;
   padding: 0.4em 0;
   font-family: $monster;
@@ -14,10 +13,21 @@
   letter-spacing: 2px;
 }
 
-.section-head__desc {
+.about__desc {
   margin: 0;
   font-size: 0.9rem;
   line-height: 1.5;
   color: $gray;
 }
 
+.about__player {
+  margin-top: 20px;
+}
+
+.about__text {
+  padding: 0 20px;
+
+  .text__line {
+
+  }
+}

@@ -7,6 +7,7 @@
 
 body {
   margin: 0;
+  padding-bottom: 50px;
   font-family: $roboto;
   font-size: 16px;
   color: $black;
@@ -19,7 +20,7 @@ a {
 }
 
 .container {
-  width: 960px;
+  /* width: 960px; */
   max-width: 960px;
   margin: 0 auto;
 }
@@ -31,6 +32,7 @@ a {
   background: url('../img/bg4.jpg') no-repeat center 50%;
   background-attachment: fixed;
   background-size: cover;
+  z-index: 1000;
 }
 
 
