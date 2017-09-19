@@ -35,7 +35,7 @@ gulp.task('jade', function() {
 });
 
 
-// Scss
+// Css
 gulp.task('css', function() {
   var processors = [
         use( { modules: ['postcss-normalize'] }),

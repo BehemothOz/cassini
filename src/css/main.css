@@ -1,6 +1,5 @@
 @import 'var.css';
-@import 'page-blocks/sec_title.css';
-@import 'page-blocks/parallax-space.css';
+@import 'page-blocks/about.css';
 
 * {
   box-sizing: border-box;
@@ -20,6 +19,7 @@ a {
 }
 
 .container {
+  width: 960px;
   max-width: 960px;
   margin: 0 auto;
 }
@@ -118,7 +118,7 @@ a {
 }
 
 
-/*Logo*/
+/** Logo **/
 
 .sticky-header__logo_link {
   position: relative;
