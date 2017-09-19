@@ -14,33 +14,13 @@ body {
   background-color: $white;
   overflow-x: hidden;
   transition: all 0.6s ease;
-  background-color: rgba(0, 0, 0, .8);
-
-  &.no-active {
-    background-color: #fff;
-  }
 }
 
 a {
   text-decoration: none;
 }
 
-.main-container {
-  /*opacity: 0;*/
-  /*visibility: hidden;*/
-  /*pointer-events: none;*/
-  display: none;
-
-  /*transition: all 0.6s ease;*/
-
-  /*&.visible {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: all;
-  }*/
-}
-
-.preloader {
+/*.preloader {
   position: absolute;
   top: 50vh;
   left: 50vw;
@@ -62,11 +42,11 @@ a {
 }
 
 /** Animation blocks **/
-@keyframes saturn {
+/*@keyframes saturn {
   0% {transform: rotate(0deg)}
   50% {transform: rotate(180deg)}
   100% {transform: rotate(360deg)}
-}
+}*/
 
 .container {
   max-width: 960px;
@@ -80,6 +60,7 @@ a {
   background: url('../img/bg4.jpg') no-repeat center 50%;
   background-attachment: fixed;
   background-size: cover;
+  background-color: #051022;
   z-index: 1000;
 }
 
