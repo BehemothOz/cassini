@@ -63,8 +63,15 @@ gulp.task('copy:img', function () {
 });
 
 
+// Media (copy)
+gulp.task('copy:media', function () {
+    return gulp.src('src/media/*.*')
+        .pipe(gulp.dest('dist/media/'))
+});
+
+
 // Task Watch
-gulp.task('watch', ['jade', 'css', 'copy:img', 'serv'], function() {
+gulp.task('watch', ['jade', 'css', 'copy:img', 'copy:media', 'serv'], function() {
     gulp.watch('src/css/**/*.css', ['css']);
     gulp.watch('src/jade/**/*.jade', ['jade']);
 });
