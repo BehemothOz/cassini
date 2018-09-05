@@ -1,5 +1,5 @@
 <b>Starry_sky</b>
 <br>
- - clone
+ - `git clone`
  - `npm install`
  - run `gulp watch`
