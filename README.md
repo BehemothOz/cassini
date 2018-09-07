@@ -1,4 +1,4 @@
-<b>Starry_sky</b>
+<b>Starry sky</b>
 <br>
  - `git clone`
  - `npm install`
